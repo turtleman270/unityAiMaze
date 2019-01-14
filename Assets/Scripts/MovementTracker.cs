@@ -8,7 +8,7 @@ public class MovementTracker : MonoBehaviour {
 	public GameObject player;
 
 	static float defaultDirectionMultiplier = 3f;
-	static float defaultSpeed = 0.02f;
+	static float defaultSpeed = 0.15f;
 	static float speedIncrement = 0.02f;
 	static float directionIncrement = 1f;
 	static float minSpeed = 0.01f;
@@ -23,6 +23,7 @@ public class MovementTracker : MonoBehaviour {
 		return notDead;
 	}
 	public void die(){
+		FileInteraction.updateFileWithCurrentValues ();
 		direction = 0;
 		notDead = false;
 	}

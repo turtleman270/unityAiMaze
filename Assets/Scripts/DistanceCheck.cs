@@ -15,6 +15,7 @@ public class DistanceCheck : MonoBehaviour {
 	public MovementTracker tracker;
 
 	void Update () {
+		/*
 		RaycastHit hit;
 
 		if (Physics.Raycast(transform.position, -transform.right,out hit)) {
@@ -35,18 +36,40 @@ public class DistanceCheck : MonoBehaviour {
 
 		float magicNumber = fancyAlgorithm (l, lf, f, rf, r);
 
-		if (magicNumber < 0) {
+		if (magicNumber < 500) {
 			tracker.turnLeft ();
 		}
-		else if (magicNumber > 0) {
+		else if (magicNumber > 1000) {
 			tracker.turnRight ();
 		}
 		else {
 			tracker.goStraight ();
 		}
+
+
+		//check if its been running too long
+		if ((Time.time*1000 - FileInteraction.startTime * 1000) > 10000) {
+			tracker.die ();
+		}
+		*/
 	}
 
 	float fancyAlgorithm(float left, float leftUp, float up, float rightUp, float right){
+
+		int[,] array;
+
+		int sum = FileInteraction.sum ((int)left, (int)leftUp, (int)up, (int)rightUp, (int)right, 
+			          FileInteraction.storedx1,
+			          FileInteraction.storedx2,
+			          FileInteraction.storedx3,
+			          FileInteraction.storedx4,
+			          FileInteraction.storedx5,
+			          FileInteraction.storedx6);
+		//Debug.Log (sum);
+		return sum;
+
+
+		/*
 		// negative left
 		// positive right
 		if (right < 1.5) {
@@ -56,6 +79,7 @@ public class DistanceCheck : MonoBehaviour {
 			return 1;
 		}
 		return -left *leftUp + right *rightUp;
+		*/
 	}
 
 }

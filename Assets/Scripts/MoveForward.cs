@@ -8,8 +8,10 @@ public class MoveForward : MonoBehaviour {
 
 	void Update () {
 		if (tracker.isNotDead()) {
-			transform.position += transform.forward*tracker.getSpeed();
-			transform.Rotate (0, tracker.getDirection(), 0);
+			if (FileInteraction.currentRobot != -1) {
+				transform.position += transform.forward * tracker.getSpeed ();
+				transform.Rotate (0, tracker.getDirection (), 0);
+			}
 		}
 	}
 
