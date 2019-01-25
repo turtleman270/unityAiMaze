@@ -7,11 +7,11 @@ public class MovementTracker : MonoBehaviour {
 	public GameObject startPosition;
 	public GameObject player;
 
-	static float defaultDirectionMultiplier = 3f;
-	static float defaultSpeed = 0.15f;
-	static float speedIncrement = 0.02f;
-	static float directionIncrement = 1f;
-	static float minSpeed = 0.01f;
+	static float defaultDirectionMultiplier = configs.defaultDirectionMultiplier;
+	static float defaultSpeed = configs.defaultSpeed;
+	static float speedIncrement = configs.speedIncrement;
+	static float directionIncrement = configs.directionIncrement;
+	static float minSpeed = configs.minSpeed;
 
 	float direction = 0;
 	float directionMultiplier = defaultDirectionMultiplier;

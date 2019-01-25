@@ -26,16 +26,15 @@ public class InsectRobot: MonoBehaviour{
 	private float forward5 = 0f;
 	private float forward6 = 0f;
 
-	public float leftThreshold = 0f;
-	public float rightThreshold = 0f;
-	public float forwardThreshold = 0f;
+	public float leftThreshold = configs.leftThreshold;
+	public float rightThreshold = configs.rightThreshold;
+	public float forwardThreshold = configs.forwardThreshold;
 
-
-	private float augmentAmount = 0.05f;
+    private float directionChangeAmount = configs.directionChangeAmount;
+    private float augmentAmount = configs.augmentAmount;
 
 	public int fitness;
 	private string color;
-	private float directionChangeAmount = 3f;
 
 	public ColisionDetector colisionDetector;
 
