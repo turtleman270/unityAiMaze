@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class clickDetector : MonoBehaviour {
 
-	public MovementTracker tracker; 
 	public GameObject prefabBug;
 	public GameObject startPosition;
 	public float startTime;
