@@ -15,4 +15,6 @@ public static class configs{
 
     public static float directionChangeAmount = 3f;
     public static float augmentAmount = 0.05f;
+
+    public static float addRobotsAmount = 50;
 }

@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class MovementTracker : MonoBehaviour {
 
-	public GameObject startPosition;
-	public GameObject player;
-
 	static float defaultDirectionMultiplier = configs.defaultDirectionMultiplier;
 	static float defaultSpeed = configs.defaultSpeed;
 	static float speedIncrement = configs.speedIncrement;
@@ -71,8 +68,6 @@ public class MovementTracker : MonoBehaviour {
 
 
 	public void reset(){
-		player.transform.position = startPosition.transform.position;
-		player.transform.rotation = startPosition.transform.rotation;
 		directionMultiplier = defaultDirectionMultiplier;
 		speed = defaultSpeed;
 		direction = 0;

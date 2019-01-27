@@ -7,7 +7,6 @@ public class clickDetector : MonoBehaviour {
 	public MovementTracker tracker; 
 	public GameObject prefabBug;
 	public GameObject startPosition;
-	public GameObject i;
 	public float startTime;
 
 	// Update is called once per frame
@@ -23,7 +22,7 @@ public class clickDetector : MonoBehaviour {
 					//make the bug or whatever
 					startTime = Time.time;
 					RobotManager.hasTimeLeft = true;
-					for (int i = 0; i < 50; i++) {
+					for (int i = 0; i < configs.addRobotsAmount; i++) {
 						RobotManager.addRobot();
 					}
 				}
