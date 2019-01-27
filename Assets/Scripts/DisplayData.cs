@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class DisplayData : MonoBehaviour {
 
-	public MovementTracker tracker; 
-
-
 	void OnGUI() {
 
 		GUI.Label (new Rect(10, 10, 200, 40), ("Fitness: "+RobotManager.getBestFitness()));
