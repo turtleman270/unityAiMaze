@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class RobotManager {
 
-	static List<InsectRobot> robotList = new List<InsectRobot>();
+	public static List<InsectRobot> robotList = new List<InsectRobot>();
 	public static bool hasTimeLeft = true;
 
 	public static int bestFitness=0;
@@ -12,6 +12,7 @@ public static class RobotManager {
 	public static float bestRightThreshold=0f;
 	public static float bestForwardThreshold=0f;
 
+    public static float totalBugs = 0f;
 
 
 	public static int getBestFitness(){
@@ -30,6 +31,8 @@ public static class RobotManager {
 	public static void addRobot(){
 		InsectRobot ir = new InsectRobot ();
 		robotList.Add (ir);
+        totalBugs = robotList.Count;
+        Debug.Log(totalBugs);
 	}
 
 	public static void update(){
@@ -69,7 +72,8 @@ public static class RobotManager {
 		hasTimeLeft = false;
 		for (int i = 0; i < robotList.Count; i++) {
 			robotList [i].resetPosition();
-		}
+        }
+
 		outWithTheoldInWithTheNew ();
 	}
 

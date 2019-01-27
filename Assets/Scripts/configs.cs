@@ -17,4 +17,6 @@ public static class configs{
     public static float augmentAmount = 0.05f;
 
     public static float addRobotsAmount = 50;
+
+    public static bool displayDataOnScreen = true;
 }
