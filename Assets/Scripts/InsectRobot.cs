@@ -39,17 +39,12 @@ public class InsectRobot: MonoBehaviour{
 	public ColisionDetector colisionDetector;
 
 	public GameObject bug;
-	public GameObject startPosition;
-
 
 	public InsectRobot(){
 		Debug.Log ("insect robot");
 		bug = (GameObject)Instantiate (Resources.Load ("Player"));
 		colisionDetector = bug.GetComponent<ColisionDetector> ();
 
-		if (startPosition == null) {
-			startPosition = GameObject.Find("StartPosition2");
-		}
 		resetPosition ();
 		bug.layer = 8;
 	}
@@ -59,11 +54,9 @@ public class InsectRobot: MonoBehaviour{
 		bug = (GameObject)Instantiate (Resources.Load ("Player"));
 		colisionDetector = bug.GetComponent<ColisionDetector> ();
 
-		if (startPosition == null) {
-			startPosition = GameObject.Find("StartPosition2");
-		}
 		resetPosition ();
 		bug.layer = 8;
+        fitness = ir.fitness;
 
 		left1 = ir.left1;
 		left2 = ir.left2;
@@ -92,8 +85,8 @@ public class InsectRobot: MonoBehaviour{
 	}
 
 	public void resetPosition(){
-		bug.transform.position = startPosition.transform.position;
-		bug.transform.rotation = startPosition.transform.rotation;
+		bug.transform.position = configs.startPos;
+		bug.transform.rotation = configs.startRot;
 		fitness = 0;
 		colisionDetector.isDead = false;
 	}
