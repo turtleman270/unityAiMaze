@@ -7,10 +7,6 @@ TagManager:
   - wall
   - sensor
   - body
-  - increaseSpeed
-  - increaseTurn
-  - decreaseSpeed
-  - decreaseTurn
   - reset
   - fillDefaults
   - one
@@ -27,6 +23,13 @@ TagManager:
   - breedWinners
   - startPosition
   - genRun
+  - addRobots
+  - sortRobots
+  - deleteRobots
+  - replaceRobots
+  - runRobots
+  - repositionRobots
+  - augmentRobots
   layers:
   - Default
   - TransparentFX

@@ -7,26 +7,8 @@ public static class RobotManager {
 	public static List<InsectRobot> robotList = new List<InsectRobot>();
 	public static bool hasTimeLeft = true;
 
-	public static int bestFitness=0;
-	public static float bestLeftThreshold=0f;
-	public static float bestRightThreshold=0f;
-	public static float bestForwardThreshold=0f;
-
     public static float totalBugs = 0f;
 
-
-	public static int getBestFitness(){
-		return bestFitness;
-	}
-	public static float getBestLeftThreshold(){
-		return bestLeftThreshold;
-	}
-	public static float getBestRightThreshold(){
-		return bestRightThreshold;
-	}
-	public static float getBestForwardThreshold(){
-		return bestForwardThreshold;
-	}
 
 	public static void addRobot(){
 		InsectRobot ir = new InsectRobot ();
@@ -44,15 +26,7 @@ public static class RobotManager {
 	}
 
 	public static void sort(){
-		robotList.Sort((x, y) => x.fitness.CompareTo(y.fitness));
-		InsectRobot bestRobot = robotList [robotList.Count - 1];
-		bestFitness = bestRobot.fitness;
-		bestLeftThreshold = bestRobot.leftThreshold;
-		bestRightThreshold = bestRobot.rightThreshold;
-		bestForwardThreshold = bestRobot.forwardThreshold;
-		for (int i = 0; i < robotList.Count; i++) {
-			Debug.Log(robotList[i].getFitness());
-		}
+		robotList.Sort((x, y) => y.fitness.CompareTo(x.fitness));
 	}
 
 	public static void outWithTheoldInWithTheNew(){
@@ -68,17 +42,30 @@ public static class RobotManager {
 	}
 
 	public static void moveBackToStart(){
-		sort ();
 		hasTimeLeft = false;
 		for (int i = 0; i < robotList.Count; i++) {
 			robotList [i].resetPosition();
+            robotList[i].colisionDetector.isDead = false;
         }
-
-		outWithTheoldInWithTheNew ();
 	}
 
-	public static void restart(){
-		hasTimeLeft = true;
-	}
+    public static void deleteHalf(){
+        for(int i = (robotList.Count+1)/2; i<robotList.Count; i++){
+            robotList[i].destroy();
+        }
+        robotList.RemoveRange((robotList.Count+1)/2,robotList.Count/2);
+        totalBugs = robotList.Count;
+    }
+
+    public static void clone(){
+        int numRobots = robotList.Count;
+        for(int i = 0; i<numRobots; i++){
+            InsectRobot ir = new InsectRobot(robotList[i]);
+            robotList.Add(ir);
+            totalBugs = robotList.Count;
+            Debug.Log("2355255378325377432073204532430");
+        }
+    }
+
 
 }
