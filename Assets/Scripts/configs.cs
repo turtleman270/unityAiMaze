@@ -22,9 +22,15 @@ public static class configs{
 	private static Vector3 startPos2 = new Vector3 (-26f, 0.53f, -13.5f);
 	private static Quaternion startRot2 = Quaternion.Euler (0f, -90f, 0f);
 
-
-
-
 	public static Vector3 startPos = startPos2;
 	public static Quaternion startRot = startRot2;
+
+
+    public static KeyCode addRobotsKey = KeyCode.A;
+    public static KeyCode sortKey = KeyCode.S;
+    public static KeyCode deleteHalfKey = KeyCode.D;
+    public static KeyCode replaceKey = KeyCode.F;
+    public static KeyCode augmentKey = KeyCode.J;
+    public static KeyCode repositionKey = KeyCode.K;
+    public static KeyCode resetAndRunKey = KeyCode.L;
 }

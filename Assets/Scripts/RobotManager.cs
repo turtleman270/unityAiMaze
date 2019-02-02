@@ -57,7 +57,7 @@ public static class RobotManager {
         totalBugs = robotList.Count;
     }
 
-    public static void clone(){
+    public static void cloneAll(){
         int numRobots = robotList.Count;
         for(int i = 0; i<numRobots; i++){
             InsectRobot ir = new InsectRobot(robotList[i]);
