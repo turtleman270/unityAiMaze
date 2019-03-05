@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ public static class RobotManager {
 	public static bool hasTimeLeft = true;
 
     public static float totalBugs = 0f;
+
+	public static int generation = 0;
 
 
 	public static void addRobot(){
@@ -39,6 +42,10 @@ public static class RobotManager {
 			}
 			robotList [i].augment();
 		}
+	}
+
+	public static void increaseGeneration(){
+		generation++;
 	}
 
 	public static void moveBackToStart(){
