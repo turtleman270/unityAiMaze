@@ -37,6 +37,7 @@ public class clickDetector : MonoBehaviour {
 	void run(){
 		startTime = Time.time;
 		RobotManager.hasTimeLeft = true;
+		RobotManager.increaseGeneration();
 	}
 
 	// Update is called once per frame
