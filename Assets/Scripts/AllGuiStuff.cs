@@ -14,8 +14,10 @@ public class AllGuiStuff : MonoBehaviour {
                 GUI.Label(new Rect(10, 10 + (i * 15), 200, 40), ("Robot " + i + " " + RobotManager.robotList[i].fitness));
             }
 
+
 			//generation info
 			GUI.Label(new Rect(Screen.width/2, 15,150,40),("Generation "+RobotManager.generation));
+
 
 			//Bottom buttons
 			if (GUI.Button(new Rect(50, Screen.height - 50, 75, 40), "Add Robots\n(a)")) {
