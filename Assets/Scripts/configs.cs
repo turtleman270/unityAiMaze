@@ -16,7 +16,9 @@ public static class configs{
 
     public static float maxRunTime = 20f;
 
-	public static int desiredMazeNum = 1;
+	public static int desiredMazeNum = 0;
+
+
 
 
 
@@ -35,22 +37,32 @@ public static class configs{
 		new Vector3(37, 28, -10), defaultCameraRot
 		);
 
-
 	public static MazeInfo[] listOfAllMazes = { mazeZero, mazeOne };
-	public static MazeInfo maze = listOfAllMazes[desiredMazeNum];
 
+	public static MazeInfo maze = listOfAllMazes[desiredMazeNum];
 	public static Vector3 startPos = maze.robotStartPos;
 	public static Quaternion startRot = maze.robotStartRot;
-
 	public static Vector3 cameraPos = maze.cameraPos;
 	public static Quaternion cameraRot = maze.cameraRot;
 
+
 	//Keyboard bindings
-    public static KeyCode addRobotsKey = KeyCode.A;
+	public static KeyCode addRobotsKey = KeyCode.A;
     public static KeyCode sortKey = KeyCode.S;
     public static KeyCode deleteHalfKey = KeyCode.D;
     public static KeyCode replaceKey = KeyCode.F;
     public static KeyCode augmentKey = KeyCode.J;
     public static KeyCode repositionKey = KeyCode.K;
     public static KeyCode resetAndRunKey = KeyCode.L;
+
+	public static void updateMazeNum(int mazeNumber){
+		desiredMazeNum = mazeNumber;
+		maze = listOfAllMazes[desiredMazeNum];
+
+		startPos = maze.robotStartPos;
+		startRot = maze.robotStartRot;
+
+		Camera.main.transform.position = maze.cameraPos;
+		Camera.main.transform.rotation = maze.cameraRot;
+	}
 }

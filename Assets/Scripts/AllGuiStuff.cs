@@ -41,6 +41,7 @@ public class AllGuiStuff : MonoBehaviour {
 			if (GUI.Button(new Rect(650, Screen.height - 50, 75, 40), "Run\n(l)")) {
 				run();
 			}
+
 		}
 	}
 
@@ -82,7 +83,7 @@ public class AllGuiStuff : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update(){
+	void Update() {
 		if (Input.GetMouseButtonDown(0)) {
 			Debug.Log("click");
 			/*
@@ -98,6 +99,8 @@ public class AllGuiStuff : MonoBehaviour {
             }
 			*/
 		}
+
+		//any of the game button keys
 		if (Input.GetKeyDown(configs.addRobotsKey)) {
 			add();
 		}
@@ -120,6 +123,13 @@ public class AllGuiStuff : MonoBehaviour {
 			run();
 		}
 
+		//any of the maze number keys
+		if (Input.GetKeyDown(KeyCode.Alpha0)) {
+			configs.updateMazeNum(0);
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha1)) {
+			configs.updateMazeNum(1);
+		}
 
 		if ((Time.time - startTime) > configs.maxRunTime) {
 			RobotManager.hasTimeLeft = false;
