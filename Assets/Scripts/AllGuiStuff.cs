@@ -125,11 +125,9 @@ public class AllGuiStuff : MonoBehaviour {
 
 		//any of the maze number keys
 		if (Input.GetKeyDown(KeyCode.Alpha0)) {
-			//todo update which maze we're lookin at
 			configs.updateMazeNum(0);
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha1)) {
-			//todo  update which maze we're lookin at
 			configs.updateMazeNum(1);
 		}
 

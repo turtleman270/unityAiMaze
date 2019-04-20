@@ -64,7 +64,5 @@ public static class configs{
 
 		Camera.main.transform.position = maze.cameraPos;
 		Camera.main.transform.rotation = maze.cameraRot;
-		//cameraPos = maze.cameraPos;
-		//cameraRot = maze.cameraRot;
 	}
 }
